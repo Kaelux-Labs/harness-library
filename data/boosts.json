@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "grants": {
+    "smooth-motion-graphics": {
+      "granted_at": "2026-10-09T23:49:46Z",
+      "expires_at": "2026-10-23T23:49:46Z",
+      "badge_present": true,
+      "last_checked_at": "2026-10-09T23:49:46Z",
+      "readme_url": "https://github.com/Ker102/smooth-motion-graphics/blob/main/README.md"
+    }
+  }
+}
