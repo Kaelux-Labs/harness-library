@@ -20,7 +20,7 @@ body:
     id: summary
     attributes:
       label: Purpose and category
-      description: What job does it help an agent do? Suggested category: Creative, 3D & Blender, Coding, Research, Data, Operations or Other.
+      description: "What job does it help an agent do? Suggested category: Creative, 3D & Blender, Coding, Research, Data, Operations or Other."
     validations:
       required: true
   - type: textarea
