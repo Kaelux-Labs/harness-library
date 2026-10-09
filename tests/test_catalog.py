@@ -34,6 +34,9 @@ class CatalogTests(unittest.TestCase):
         self.assertFalse(c.has_badge('\n'*31+self.badge,self.entry['id']))
         self.assertFalse(c.has_badge('```md\n'+self.badge+'\n```',self.entry['id']))
         self.assertFalse(c.has_badge('<!--'+self.badge+'-->',self.entry['id']))
+        self.assertFalse(c.has_badge('<!--\n'+self.badge+'\n'*30+'-->',self.entry['id']))
+        self.assertFalse(c.has_badge('<!--\n'+'comment\n'*32+'-->\n'+self.badge,self.entry['id']))
+        self.assertFalse(c.has_badge('`'+self.badge+'`',self.entry['id']))
     def test_actual_html_badge_is_supported(self):
         slug=self.entry['id'];html=f'<p><a href="{c.SITE}#{slug}"><img src="{c.SITE}badges/{slug}.svg" alt="Listed in Harness Library"></a></p>'
         self.assertTrue(c.has_badge(html,slug))

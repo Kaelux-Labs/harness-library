@@ -152,13 +152,14 @@ class BadgeHTML(HTMLParser):
 
 def has_badge(readme, slug):
     # Read only first 30 lines, ignore comments/fenced examples. Never execute content.
-    readme=re.sub(r'<!--.*?-->','',readme,flags=re.S)
     head='\n'.join(readme.splitlines()[:30])
+    head=re.sub(r'<!--.*?(?:-->|$)','',head,flags=re.S)
     clean=[];fenced=False
     for line in head.splitlines():
         if line.lstrip().startswith(('```','~~~')): fenced=not fenced;continue
-        if not fenced: clean.append(line)
+        if not fenced and not line.startswith(('    ','\t')): clean.append(line)
     head='\n'.join(clean)
+    head=re.sub(r'`+[^`]*`+','',head)
     target=SITE+'#'+slug;badge=SITE+'badges/'+slug+'.svg'
     md='[![Listed in Harness Library]('+badge+')]('+target+')'
     if md in head: return True
