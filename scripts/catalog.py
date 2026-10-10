@@ -213,7 +213,7 @@ def checked_catalog(root=ROOT, now=None):
     return {'generated_at':iso(now),'categories':CATEGORIES,'listings':result}
 
 def badge(slug):
-    return '<svg xmlns="http://www.w3.org/2000/svg" width="218" height="28" role="img" aria-label="Listed in Harness Library"><title>Listed in Harness Library</title><rect width="218" height="28" rx="5" fill="#252727"/><path d="M12 10c-7-6-10 12-2 9l8-8c8-4 10 13 2 9l-8-10" transform="translate(6,-1)" fill="none" stroke="#ee7836" stroke-width="2"/><text x="43" y="18" fill="#fff" font-family="Arial,sans-serif" font-size="11">Listed in Harness Library</text></svg>'
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="218" height="28" role="img" aria-label="Listed in Harness Library"><title>Listed in Harness Library</title><rect width="218" height="28" rx="5" fill="#252727"/><g transform="translate(7,2) scale(.52)" fill="none" stroke="#ff8243" stroke-width="4.5"><circle cx="17" cy="29" r="12.5"/><circle cx="34" cy="17" r="12.5"/></g><text x="43" y="18" fill="#fff" font-family="Arial,sans-serif" font-size="11">Listed in Harness Library</text></svg>'
 
 def build(root=ROOT):
     catalog=checked_catalog(root);destination=root/'dist';destination.mkdir(exist_ok=True)
