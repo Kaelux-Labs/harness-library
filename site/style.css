@@ -170,6 +170,47 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 .version-line { font-size: 12px !important; }
 .error { padding: 28px 0 60px; }
 main:focus { outline: none; }
+.submission-callout { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 40px; align-items: center; margin-top: 46px; padding: 32px 0; border-block: 1px solid var(--line); }
+.welcome-label { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .04em; }
+.submission-callout h2 { margin: 0 0 12px; font-size: 30px; letter-spacing: -1px; line-height: 1.25; }
+.submission-callout p:not(.welcome-label) { max-width: 750px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.submission-callout p.submission-note { margin-top: 11px; font-size: 12px; }
+.submission-action { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.welcome-hand { color: var(--accent); font: 500 25px/1.1 Caveat, cursive; transform: rotate(-4deg); }
+.library-intro { max-width: 900px; padding-block: 30px 14px; }
+.library-intro h2 { margin: 0 0 14px; font-size: 23px; letter-spacing: -.65px; }
+.library-intro p { color: var(--muted); font-size: 14px; line-height: 1.85; }
+.no-js-note { margin-bottom: 20px; font-size: 14px; color: var(--muted); }
+button:disabled, input:disabled { cursor: default; }
+.guide-head { max-width: 870px; padding-bottom: 30px; }
+.guide-head h1, .about-content h1 { margin: 0 0 22px; font-size: clamp(35px,4.2vw,58px); font-weight: 780; letter-spacing: -2px; line-height: 1.15; }
+.guide-head > p:not(.welcome-label), .guide-lead { color: var(--muted); font-size: 18px; line-height: 1.8; }
+.guide-head > p:not(.welcome-label) { margin: 10px 0; }
+.guide-head .actions { margin-bottom: 0; }
+.guide-grid { display: grid; grid-template-columns: minmax(0,1.6fr) minmax(0,1fr); gap: 64px; border-top: 1px solid var(--line); padding-block: 35px 22px; }
+.submit-steps { list-style: none; counter-reset: submission; margin: 0; padding: 0; }
+.submit-steps > li { position: relative; padding: 0 0 30px 48px; counter-increment: submission; }
+.submit-steps > li::before { content: counter(submission); position: absolute; inset: 0 auto auto 0; display: grid; place-items: center; width: 31px; height: 31px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 14px; font-weight: 750; }
+.guide-grid h2, .faq-section h2 { margin: 0 0 14px; color: var(--ink); font-size: 25px; line-height: 1.4; letter-spacing: -.7px; }
+.guide-grid h3 { margin: 25px 0 10px; font-size: 18px; }
+.guide-grid p, .guide-grid li, .faq-list p, .about-content > p { color: var(--muted); font-size: 15px; line-height: 1.85; }
+.guide-grid p { margin: 0 0 15px; }
+.guide-checklist { padding-top: 25px; border-top: 1px solid var(--line); }
+.guide-checklist ul { padding-left: 20px; }
+.guide-checklist li { margin-block: 9px; }
+.submission-aside { padding-left: 28px; border-left: 1px solid var(--line); }
+.submission-aside > a { font-size: 13px; }
+.faq-section { padding-top: 28px; margin-bottom: 32px; border-top: 1px solid var(--line); }
+.faq-list { margin-top: 20px; }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { padding: 19px 0; font-size: 15px; font-weight: 700; cursor: pointer; line-height: 1.6; }
+.faq-list summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.faq-list summary::marker { color: var(--accent); }
+.faq-list p { max-width: 850px; margin: 0 0 20px; }
+.about-content { max-width: 920px; padding-bottom: 25px; }
+.about-content h2 { margin: 33px 0 14px; font-size: 25px; letter-spacing: -.6px; line-height: 1.4; }
+.about-content > p { margin: 0 0 17px; }
+.about-content > p.guide-lead { font-size: 19px; }
 @media (max-width:1100px) {
   .wrap { width: calc(100% - 56px); }
   .hero::before { inset-inline: -28px; }
@@ -205,6 +246,8 @@ main:focus { outline: none; }
   .detail-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
   .inside { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .badge-offer { max-width: 560px; }
+  .submission-callout { gap: 24px; }
+  .guide-grid { gap: 32px; }
 }
 @media (max-width:600px) {
   .wrap { width: calc(100% - 40px); }
@@ -249,6 +292,21 @@ main:focus { outline: none; }
   .codebox pre { font-size: 10px; }
   .inside { grid-template-columns: 1fr 1fr; }
   .badge-offer { padding: 20px 17px; }
+  .submission-callout { grid-template-columns: minmax(0,1fr); margin-top: 30px; padding-block: 26px; gap: 24px; }
+  .submission-callout h2 { font-size: 26px; }
+  .submission-callout p:not(.welcome-label) { font-size: 14px; }
+  .submission-action { align-items: flex-start; gap: 12px; }
+  .library-intro { padding-block: 28px 5px; }
+  .guide-head h1, .about-content h1 { font-size: 35px; letter-spacing: -1.4px; }
+  .guide-head > p:not(.welcome-label), .about-content > p.guide-lead { font-size: 16px; }
+  .guide-head { padding-bottom: 27px; }
+  .guide-grid { grid-template-columns: minmax(0,1fr); gap: 25px; padding-top: 28px; }
+  .guide-grid h2, .faq-section h2, .about-content h2 { font-size: 23px; }
+  .guide-grid p, .guide-grid li, .faq-list p, .about-content > p { font-size: 14px; }
+  .submit-steps > li { padding-left: 42px; }
+  .submit-steps > li::before { width: 28px; height: 28px; font-size: 13px; }
+  .submission-aside { padding: 25px 0 0; border-left: none; border-top: 1px solid var(--line); }
+  .faq-list summary { font-size: 14px; }
 }
 @media (max-width:360px) {
   .hero h1 { font-size: 34px; letter-spacing: -1.3px; }

@@ -1,6 +1,14 @@
 # Submit a harness
 
-Anyone can submit through the [GitHub issue form](https://github.com/Ker102/harness-library/issues/new?template=submit-harness.yml) or a pull request. Open an issue if you would rather not edit JSON. A maintainer reviews it before it appears publicly.
+**New submissions are welcome.** We’re looking for practical, reusable agent setups, including small skill folders. Harneloop is optional.
+
+The simplest route needs no fork or pull request:
+
+1. [Open the GitHub submission form](https://github.com/Ker102/harness-library/issues/new?template=submit-harness.yml). Share the repository, name and task/category.
+2. Explain installation, focused distribution, version/license and any manual connections. Extra composition and test evidence are optional.
+3. Maintainers review your issue, ask for missing details there if needed, and publish approved entries. Later changes can be submitted in another issue or PR.
+
+You only need a GitHub account to use the form. The [website guide](https://ker102.github.io/harness-library/submit/) explains the same process.
 
 For a PR, copy `docs/listing.example.json` to `data/listings/your-slug.json`. Use the same lowercase slug in the filename and `id`. Run `python scripts/catalog.py validate` and the tests described in the README.
 

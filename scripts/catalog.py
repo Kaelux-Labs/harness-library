@@ -160,11 +160,13 @@ def has_badge(readme, slug):
         if not fenced and not line.startswith(('    ','\t')): clean.append(line)
     head='\n'.join(clean)
     head=re.sub(r'`+[^`]*`+','',head)
-    target=SITE+'#'+slug;badge=SITE+'badges/'+slug+'.svg'
-    md='[![Listed in Harness Library]('+badge+')]('+target+')'
-    if md in head: return True
-    parser=BadgeHTML(target,badge);parser.feed(head)
-    return parser.found
+    badge=SITE+'badges/'+slug+'.svg'
+    for target in [SITE+'#'+slug,SITE+'harnesses/'+slug+'/']:
+        md='[![Listed in Harness Library]('+badge+')]('+target+')'
+        if md in head: return True
+        parser=BadgeHTML(target,badge);parser.feed(head)
+        if parser.found: return True
+    return False
 
 def readme(e):
     match=REPO.fullmatch(e['repository'])
@@ -208,7 +210,7 @@ def checked_catalog(root=ROOT, now=None):
         if not review: continue # Only approved listings are published.
         if review['built_with_harneloop'] and 'harneloop' not in e: raise ValueError('Approved attribution needs a source')
         boost=grants.get(e['id']);is_active=active(boost,now)
-        result.append({**e,'review':review,'boost':boost if is_active else None})
+        result.append({**e,'url':SITE+'harnesses/'+e['id']+'/','review':review,'boost':boost if is_active else None})
     result.sort(key=lambda e:(not bool(e['boost']),e['name'].casefold()))
     return {'generated_at':iso(now),'categories':CATEGORIES,'listings':result}
 
@@ -218,11 +220,13 @@ def badge(slug):
 def build(root=ROOT):
     catalog=checked_catalog(root);destination=root/'dist';destination.mkdir(exist_ok=True)
     for source in (root/'site').rglob('*'):
-        if source.is_file():
+        if source.is_file() and source != root/'site/layout.html':
             target=destination/source.relative_to(root/'site');target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target)
     save(destination/'catalog.json',catalog)
     (destination/'badges').mkdir(exist_ok=True)
     for e in catalog['listings']:(destination/'badges'/f"{e['id']}.svg").write_text(badge(e['id']),encoding='utf-8')
+    from publishing import publish
+    publish(root,destination,catalog)
     (destination/'.nojekyll').touch()
     print(f"Built {len(catalog['listings'])} reviewed listings")
 

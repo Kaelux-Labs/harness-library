@@ -51,3 +51,11 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v5
         id: deployment
+      - uses: actions/checkout@v7
+        if: github.event_name == 'push' && github.event.head_commit.message != 'Refresh verified community badge receipts'
+      - name: Notify participating search engines of published changes
+        if: github.event_name == 'push' && github.event.head_commit.message != 'Refresh verified community badge receipts'
+        continue-on-error: true
+        run: |
+          python scripts/catalog.py build
+          python scripts/notify_indexnow.py

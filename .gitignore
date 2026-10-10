@@ -1,4 +1,5 @@
 dist/
+.preview/
 .playwright-cli/
 __pycache__/
 *.pyc

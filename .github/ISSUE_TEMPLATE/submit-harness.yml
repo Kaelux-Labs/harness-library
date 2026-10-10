@@ -3,6 +3,13 @@ description: Share a reusable agent harness with clear setup instructions.
 title: "[Harness] "
 labels: [submission]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        **New submissions are welcome — a useful skill folder can be enough.**
+        Share your repository and setup below. No fork, pull request or Harneloop dependency is required.
+        A maintainer reviews the instructions and package scope, asks questions here if needed, and publishes approved listings.
+        [Read the short submission guide](https://ker102.github.io/harness-library/submit/).
   - type: input
     id: name
     attributes:
