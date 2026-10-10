@@ -40,6 +40,15 @@ class CatalogTests(unittest.TestCase):
     def test_actual_html_badge_is_supported(self):
         slug=self.entry['id'];html=f'<p><a href="{c.SITE}#{slug}"><img src="{c.SITE}badges/{slug}.svg" alt="Listed in Harness Library"></a></p>'
         self.assertTrue(c.has_badge(html,slug))
+    def test_owner_migration_preserves_legacy_badge_and_grant(self):
+        slug=self.entry['id'];old='https://kaelux-labs.github.io/harness-library/'
+        legacy=f'[![Listed in Harness Library]({old}badges/{slug}.svg)]({old}#{slug})'
+        receipt={'grants':{}};fetch=lambda e:(legacy,e['repository']+'/blob/main/README.md')
+        c.refresh([self.entry],receipt,self.now,fetch)
+        original=receipt['grants'][slug]['expires_at']
+        c.refresh([self.entry],receipt,self.now+timedelta(days=2),lambda e:(self.badge,e['repository']+'/blob/main/README.md'))
+        self.assertEqual(receipt['grants'][slug]['expires_at'],original)
+        self.assertTrue(c.active(receipt['grants'][slug],self.now+timedelta(days=2)))
     def test_boost_expires_at_exactly_14_days_and_does_not_renew(self):
         receipt={'grants':{}};fetch=lambda e:(self.badge,e['repository']+'/blob/main/README.md')
         c.refresh([self.entry],receipt,self.now,fetch);grant=receipt['grants'][self.entry['id']]

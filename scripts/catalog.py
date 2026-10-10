@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 import os
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = 'https://ker102.github.io/harness-library/'
+SITE = 'https://kaelux-labs.github.io/harness-library/'
 CATEGORIES = ['Creative', '3D & Blender', 'Coding', 'Research', 'Data', 'Operations', 'Other']
 REPO = re.compile(r'https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)\Z')
 SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*\Z')
@@ -160,8 +160,11 @@ def has_badge(readme, slug):
         if not fenced and not line.startswith(('    ','\t')): clean.append(line)
     head='\n'.join(clean)
     head=re.sub(r'`+[^`]*`+','',head)
-    badge=SITE+'badges/'+slug+'.svg'
-    for target in [SITE+'#'+slug,SITE+'harnesses/'+slug+'/']:
+    # Preserve existing grants across the organization migration. New badges use SITE.
+    sites=[SITE,'https://ker102.github.io/harness-library/']
+    pairs=[(site+'badges/'+slug+'.svg',target) for site in sites
+           for target in [site+'#'+slug,site+'harnesses/'+slug+'/']]
+    for badge,target in pairs:
         md='[![Listed in Harness Library]('+badge+')]('+target+')'
         if md in head: return True
         parser=BadgeHTML(target,badge);parser.feed(head)

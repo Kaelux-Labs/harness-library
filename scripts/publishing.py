@@ -6,9 +6,9 @@ import re
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-SITE = 'https://ker102.github.io/harness-library/'
+SITE = 'https://kaelux-labs.github.io/harness-library/'
 BASE = '/harness-library/'
-REPOSITORY = 'https://github.com/Ker102/harness-library'
+REPOSITORY = 'https://github.com/Kaelux-Labs/harness-library'
 FORM = REPOSITORY + '/issues/new?template=submit-harness.yml'
 DEFINITION = ('An agent harness is the surrounding setup that lets an AI model act on a task. '
               'It can include instructions, skills, tools, environment mappings, checks and workflows. '
@@ -66,15 +66,18 @@ def list_section(title, values, cls='', level=3):
     body = '<ul>' + items + '</ul>' if items else '<p>None declared.</p>'
     return f'<section class="{h(cls)}"><h{level}>{h(title)}</h{level}>{body}</section>'
 
+def icon(name):
+    return f'<svg class="icon" viewBox="0 0 256 256" aria-hidden="true"><use href="{local("assets/icons.svg")}#{name}"></use></svg>'
+
 def listing(e):
     art = 'blender.svg' if e['id'] == 'vipermesh-blender' else 'motion.svg'
     search = ' '.join([e['name'], e['summary'], e['category'], *e['notes'], *e.get('contents',{}).get('tools',[])])
     package = 'MCP bundle + addon' if e['id'] == 'vipermesh-blender' else 'Skill package' if e.get('contents',{}).get('skills') else 'Harness package'
     return (f'<article id="{h(e["id"])}" class="listing" data-harness-id="{h(e["id"])}" data-category="{h(e["category"])}" data-search="{h(search)}" {boost_attributes(e)}>'
-            f'<div class="thumb"><img src="{local("assets/"+art)}" alt="" width="138" height="124"></div>'
+            f'<div class="thumb"><img src="{local("assets/"+art)}" alt="" width="80" height="80"></div>'
             '<div class="listing-body"><h2>' + a(e['name'],local(harness_path(e))) + '</h2>'
             f'<p>{h(e["summary"])}</p>{labels(e)}</div><div class="listing-action">'
-            + a('View harness →',local(harness_path(e))) + f'<span>{package}</span></div></article>')
+            + f'<a href="{local(harness_path(e))}">View harness {icon("ArrowRight")}</a>' + f'<span>{icon("Package" if e["id"]=="vipermesh-blender" else "BookOpen")}{package}</span></div></article>')
 
 def faq_html(items=FAQ):
     return '<div class="faq-list">' + ''.join(f'<details><summary>{h(q)}</summary><p>{h(answer)}</p></details>' for q,answer in items) + '</div>'
@@ -94,7 +97,7 @@ def home(catalog):
             '<h1>Good agents start<br>with a good harness.</h1>'
             '<p>Discover reusable AI agent harnesses: skills, tools, and workflows. Install only what you need.</p></div>'
             f'<div class="hero-sketch" aria-hidden="true"><img src="{local("assets/harness-sketch.svg")}" alt="" width="340" height="270"><span class="sketch-note">find your<br>starting point</span></div></div>'
-            '<div class="controls"><label class="search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>'
+            f'<div class="controls"><label class="search">{icon("MagnifyingGlass")}'
             '<span class="sr-only">Search harnesses</span><input id="search" type="search" placeholder="Search harnesses…" autocomplete="off" disabled></label>'
             f'<div id="categories" class="categories" role="group" aria-label="Filter by category">{buttons}</div></div>'
             '<noscript><p class="no-js-note">Search needs JavaScript. You can still browse every harness and its installation page below.</p></noscript>'

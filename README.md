@@ -1,21 +1,30 @@
 <p align="center"><img src="site/assets/mark.svg" width="70" alt="Harness Library"></p>
 <h1 align="center">Harness Library</h1>
 <p align="center">Discover, install and share reusable agent harnesses.</p>
-<p align="center"><a href="https://ker102.github.io/harness-library/">Browse the library</a> · <a href="https://github.com/Ker102/harness-library/issues/new?template=submit-harness.yml">Submit a harness</a> · <a href="CONTRIBUTING.md">Submission guide</a></p>
+<p align="center"><a href="https://kaelux-labs.github.io/harness-library/">Browse the library</a> · <a href="https://github.com/Kaelux-Labs/harness-library/issues/new?template=submit-harness.yml">Submit a harness</a> · <a href="CONTRIBUTING.md">Submission guide</a></p>
 
 An open directory of the instructions, skills, tools and workflows that help an agent do a specific job well. A harness can be a few files or a larger tool setup. Every listing explains how to install it, what to configure manually and which part of the source repository you need.
 
 The first entries are [Smooth Motion Graphics](https://github.com/Ker102/smooth-motion-graphics) and [ViperMesh for Blender](https://github.com/Ker102/vipermesh-blender). ViperMesh's existing repository and releases are listed unchanged. Harneloop is optional; harnesses built with it can display the attribution after review.
 
+## See a harness in action
+
+The Harneloop explainer shows the motion style behind the library’s [Smooth Motion Graphics harness](https://kaelux-labs.github.io/harness-library/harnesses/smooth-motion-graphics/): readable scenes, curved connections and calm transitions. It also explains how Harneloop builds and improves harness units.
+
+<p align="center"><a href="https://harneloop.kaelux.dev/media/harneloop-how-it-works.mp4"><img src="https://harneloop.kaelux.dev/media/harneloop-video-poster.png" alt="Watch the silent Harneloop motion graphics demo" width="860"></a></p>
+<p align="center"><a href="https://harneloop.kaelux.dev/media/harneloop-how-it-works.mp4">Watch the full video · 3:40 · Silent with on-screen explanations</a></p>
+
+The video is hosted separately. Browse the harness’s own install package and example renderer from its listing.
+
 ## Submit a harness
 
 **New submissions are welcome.** We’re looking for useful harnesses for coding, research, data, creative work, Blender and operations. A few skills can be enough; you do not need to use Harneloop.
 
-1. [Open the short GitHub submission form](https://github.com/Ker102/harness-library/issues/new?template=submit-harness.yml) with your repository and the task it helps an agent do.
+1. [Open the short GitHub submission form](https://github.com/Kaelux-Labs/harness-library/issues/new?template=submit-harness.yml) with your repository and the task it helps an agent do.
 2. Add clear installation steps, category, license, version/distribution scope and any manual setup. Component counts and test evidence are optional.
 3. A maintainer reviews the setup, follows up in your issue if needed, and publishes approved entries.
 
-**No fork, pull request or Harness Library account is needed.** A GitHub account is needed for the form. You can also send a PR adding one JSON file in `data/listings/`. See the [public submission guide](https://ker102.github.io/harness-library/submit/), [CONTRIBUTING.md](CONTRIBUTING.md) and [the template](docs/listing.example.json).
+**No fork, pull request or Harness Library account is needed.** A GitHub account is needed for the form. You can also send a PR adding one JSON file in `data/listings/`. See the [public submission guide](https://kaelux-labs.github.io/harness-library/submit/), [CONTRIBUTING.md](CONTRIBUTING.md) and [the template](docs/listing.example.json).
 
 A mixed repository must provide a focused package or a dedicated harness branch. Uploaders do not set verification or promotion labels. Maintainers review setup, scope and any evidence before publishing the listing. “Artifacts checked” means the documented artifacts were inspected; it does not imply every model, platform or use case works.
 

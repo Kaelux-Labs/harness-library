@@ -4,18 +4,18 @@ The public directory publishes complete HTML at stable URLs. Search engines, bro
 
 ## Public resources
 
-- [Directory](https://ker102.github.io/harness-library/) and [submission guide](https://ker102.github.io/harness-library/submit/).
-- [Sitemap](https://ker102.github.io/harness-library/sitemap.xml): canonical HTML pages only. Daily badge checks do not manufacture content modification dates.
-- [llms.txt](https://ker102.github.io/harness-library/llms.txt): a compact guide linking to Markdown installation pages and data.
-- [llms-full.txt](https://ker102.github.io/harness-library/llms-full.txt): combined public text.
-- [catalog.json](https://ker102.github.io/harness-library/catalog.json): reviewed listings, canonical page URLs, installation, manual setup and scoped evidence.
+- [Directory](https://kaelux-labs.github.io/harness-library/) and [submission guide](https://kaelux-labs.github.io/harness-library/submit/).
+- [Sitemap](https://kaelux-labs.github.io/harness-library/sitemap.xml): canonical HTML pages only. Daily badge checks do not manufacture content modification dates.
+- [llms.txt](https://kaelux-labs.github.io/harness-library/llms.txt): a compact guide linking to Markdown installation pages and data.
+- [llms-full.txt](https://kaelux-labs.github.io/harness-library/llms-full.txt): combined public text.
+- [catalog.json](https://kaelux-labs.github.io/harness-library/catalog.json): reviewed listings, canonical page URLs, installation, manual setup and scoped evidence.
 - Each canonical HTML page has a corresponding `index.md`, linked with `rel="alternate" type="text/markdown"`.
 
 Every HTML page has a unique title, description and canonical URL, social preview metadata and matching JSON-LD. Structured data describes the real directory, maintainer and harnesses; it does not invent ratings, downloads or universal compatibility. Unknown paths return GitHub Pages' 404 status using the noindex error page. Old listing hash links remain supported.
 
 ## Owner setup
 
-1. Add a **URL-prefix property** for `https://ker102.github.io/harness-library/` in [Google Search Console](https://search.google.com/search-console). This limits the property to the project. Use the verification method provided for your account; an HTML verification file can be placed in `site/` once its exact filename and contents are supplied.
+1. Add a **URL-prefix property** for `https://kaelux-labs.github.io/harness-library/` in [Google Search Console](https://search.google.com/search-console). This limits the property to the project. Use the verification method provided for your account; an HTML verification file can be placed in `site/` once its exact filename and contents are supplied.
 2. Submit `sitemap.xml` in that property. Inspect the home, submission guide and harness URLs; request indexing where the tool offers it. A submission is a discovery hint, not an indexing promise.
 3. Add the same site to [Bing Webmaster Tools](https://www.bing.com/webmasters/) and submit the sitemap. If the account offers import from Google Search Console, that can reuse the verified property.
 4. Revisit indexing reports after deployment. Fix reported crawl or content issues based on evidence. Do not treat a `site:` search or a Lighthouse score as proof of index coverage or rankings.
