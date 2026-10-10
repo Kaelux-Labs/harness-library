@@ -32,9 +32,15 @@ For a deliberate content update outside the workflow, build first, then run `pyt
 
 ## GitHub Pages and robots.txt
 
-Robots rules are read from the **host root**, `https://ker102.github.io/robots.txt`, not from `/harness-library/robots.txt`. At the October 10, 2026 audit the host-root URL returned 404; Google's documented treatment is no crawl restriction. This project's `robots.txt` is a reference containing the sitemap URL, not a control file for the shared `ker102.github.io` host. Submit the sitemap through webmaster accounts rather than relying on that reference.
+Robots rules for the directory are read from the **host root**, `https://kaelux-labs.github.io/robots.txt`, not from `/harness-library/robots.txt`. At the October 10, 2026 audit the organization host-root URL returned 404; Google's documented treatment is no crawl restriction. This project's `robots.txt` is a reference containing the sitemap URL, not a control file for the shared `kaelux-labs.github.io` host. Submit the sitemap through webmaster accounts rather than relying on that reference.
 
 If the owner later adds a root-site repository or a custom domain, check the authoritative robots file before deploying restrictions. Never change rules for other projects on the same host casually.
+
+## Organization migration
+
+The repository and directory moved to [Kaelux Labs](https://github.com/Kaelux-Labs/harness-library) on October 10, 2026. GitHub redirects the old repository URL. A small [account Pages repository](https://github.com/Ker102/ker102.github.io) preserves the old directory pages with instant redirects and canonical links, and continues serving existing badge images. Its host-root `robots.txt` allows crawling and links to the current sitemap.
+
+Existing badge backlinks using either the old or current directory URL remain eligible. Changing those links does not restart an existing 14-day boost; the original receipt dates remain authoritative.
 
 ## Agent discovery
 
