@@ -1,0 +1,27 @@
+# Listed in Harness Library：免费的 14 天社区推广
+
+此计划奖励帮助人们发现可复用 harness 的贡献者。无需付费，也不要求使用 Harneloop。
+
+1. 先让条目通过审核。
+2. 从目录中的条目详情页复制徽章片段，并放在源仓库默认分支 README 的**前 30 行**内。
+3. 保持图片链接准确指向你的条目。下一次验证会授予一次**为期 14 天的推广**，从首次成功检查的 UTC 时间开始计算。
+
+示例：
+
+```md
+[![Listed in Harness Library](https://kaelux-labs.github.io/harness-library/badges/your-slug.svg)](https://kaelux-labs.github.io/harness-library/harnesses/your-slug/)
+```
+
+支持原样 Markdown 或等效的带链接 HTML 图片。图片替代文本必须为“Listed in Harness Library”。代码围栏或 HTML 注释中的示例不符合资格。
+
+此前发放的 `https://kaelux-labs.github.io/harness-library/#your-slug` 回链仍符合资格，并会导航到对应页面。新徽章应使用实际页面 URL。
+
+有效推广条目显示在普通条目之前，每组内部按字母顺序排序。搜索和类别筛选仍然有效。目录在详情页显示 **Community boost** 标签及到期时间。这是推广展示位置；审核状态和质量声明与之独立。
+
+每日运行的可信 main 分支工作流只读取公开的 GitHub README 元数据。它在 `data/boosts.json` 中记录首次授予、到期时间、最近的徽章存在情况和检查时间。它不会运行 harness 仓库中的代码。移除徽章会在下一次检查后停止推广。重新添加只能恢复原始推广期中剩余的时间。已到期的授予绝不会自动续期。重复提交、变更 slug 或转移仓库，都不会让同一个 harness 获得第二次初始奖励；维护者会审核其身份。
+
+如果 GitHub 暂时不可用，不会授予新的推广。已经检查过的徽章在没有新检查时，最多保持资格 48 小时，并且绝不会超过原始到期时间。静态构建和浏览器都会重新检查时间戳。记录需要维护者批准；修改提交中的 JSON 字段无法获得推广。
+
+到期后仍可保留徽章。任何新政策都将公开讨论；不存在隐藏的定期推广或付费排名。
+
+迁移到 Kaelux Labs 之前，在 `https://ker102.github.io/harness-library/` 发放的徽章仍符合资格。迁移不会重新开始原始的 14 天窗口。方便时，请将图片和回链一并更新为新的规范地址。

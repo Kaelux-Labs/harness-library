@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "source_language": "en",
+  "canonical_repository": "https://github.com/Kaelux-Labs/harness-library",
+  "hash_algorithm": "sha256",
+  "hash_normalization": "UTF-8 text with CRLF normalized to LF; no other whitespace normalization",
+  "locales": [
+    "es",
+    "zh-CN",
+    "fr",
+    "ja",
+    "de",
+    "pt-BR"
+  ],
+  "scope": "Maintained public Markdown at repository root, docs/, and .github/; explicit exclusions below. The maintenance index in docs/i18n/ is not a translation source.",
+  "excluded": [
+    {
+      "paths": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "task.md",
+        "progress.md",
+        "memory.md",
+        "SESSION.md",
+        "implementation-plan.md"
+      ],
+      "reason": "Agent instructions, task state and internal plans; never translated."
+    },
+    {
+      "paths": [
+        "docs/plans/**",
+        "docs/internal/**",
+        "docs/private/**",
+        "docs/runs/**",
+        "docs/run-records/**",
+        "docs/evidence/**"
+      ],
+      "reason": "Internal planning, generated run records and private local evidence."
+    },
+    {
+      "paths": [
+        "docs/historical/**",
+        "docs/archive/**",
+        "docs/archives/**"
+      ],
+      "reason": "Historical materials are not maintained translation sources."
+    },
+    {
+      "paths": [
+        "dist/**",
+        "docs/generated/**"
+      ],
+      "reason": "Generated website pages and run output are not authored documentation sources."
+    },
+    {
+      "paths": [
+        "data/**",
+        "docs/listing.example.json"
+      ],
+      "reason": "Listings, review/boost receipts and JSON data/template stay unchanged and shared."
+    },
+    {
+      "paths": [
+        "site/**",
+        "vendor/**",
+        "docs/vendor/**"
+      ],
+      "reason": "Website UI, assets and vendor/license documentation stay unchanged and shared."
+    },
+    {
+      "paths": [
+        "docs/i18n/**"
+      ],
+      "reason": "Translation mirrors, their administrative maintenance index and manifest are not recursive translation sources."
+    }
+  ],
+  "untranslated_historical_materials": [],
+  "inventory_notes": [
+    "Four maintained public Markdown sources exist in this checkout. Submission and review guidance is in CONTRIBUTING.md; no separate SECURITY.md, quickstart, review or reference guide exists.",
+    "Source URLs, including legacy Ker102 links in CONTRIBUTING.md and migration history, are preserved exactly. Canonical repository identity is Kaelux-Labs/harness-library.",
+    "Complete means a full source-equivalent mirror with all sections and policy limitations, not an independently certified native-speaker review. The local validator cannot prove prose equivalence.",
+    "No authored historical Markdown materials were found in the public source scope at inventory time. Generated dist Markdown is explicitly excluded."
+  ],
+  "sources": [
+    {
+      "path": "README.md",
+      "sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b",
+      "mirrors": {
+        "es": {
+          "path": "docs/i18n/es/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        },
+        "zh-CN": {
+          "path": "docs/i18n/zh-CN/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        },
+        "fr": {
+          "path": "docs/i18n/fr/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        },
+        "ja": {
+          "path": "docs/i18n/ja/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        },
+        "de": {
+          "path": "docs/i18n/de/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        },
+        "pt-BR": {
+          "path": "docs/i18n/pt-BR/README.md",
+          "status": "complete",
+          "source_sha256": "d65b24dc09e8ed14e25eecff7e49a079485302588690b96ddf1aad707bc1ab3b"
+        }
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11",
+      "mirrors": {
+        "es": {
+          "path": "docs/i18n/es/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        },
+        "zh-CN": {
+          "path": "docs/i18n/zh-CN/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        },
+        "fr": {
+          "path": "docs/i18n/fr/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        },
+        "ja": {
+          "path": "docs/i18n/ja/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        },
+        "de": {
+          "path": "docs/i18n/de/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        },
+        "pt-BR": {
+          "path": "docs/i18n/pt-BR/CONTRIBUTING.md",
+          "status": "complete",
+          "source_sha256": "aac43540db27f3fcb8c05612bb97ff90462b8054a6fb1778daba77b6378baf11"
+        }
+      }
+    },
+    {
+      "path": "docs/badge-program.md",
+      "sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f",
+      "mirrors": {
+        "es": {
+          "path": "docs/i18n/es/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        },
+        "zh-CN": {
+          "path": "docs/i18n/zh-CN/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        },
+        "fr": {
+          "path": "docs/i18n/fr/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        },
+        "ja": {
+          "path": "docs/i18n/ja/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        },
+        "de": {
+          "path": "docs/i18n/de/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        },
+        "pt-BR": {
+          "path": "docs/i18n/pt-BR/docs/badge-program.md",
+          "status": "complete",
+          "source_sha256": "a4e4557f8d483adcc9be4534b9f8bf31db639e20ba7f3cd526d44e2ef614f09f"
+        }
+      }
+    },
+    {
+      "path": "docs/discovery.md",
+      "sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f",
+      "mirrors": {
+        "es": {
+          "path": "docs/i18n/es/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        },
+        "zh-CN": {
+          "path": "docs/i18n/zh-CN/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        },
+        "fr": {
+          "path": "docs/i18n/fr/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        },
+        "ja": {
+          "path": "docs/i18n/ja/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        },
+        "de": {
+          "path": "docs/i18n/de/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        },
+        "pt-BR": {
+          "path": "docs/i18n/pt-BR/docs/discovery.md",
+          "status": "complete",
+          "source_sha256": "d6adf0b918262207693736f6b71dee4eb3293320f71e8532687de038da5b913f"
+        }
+      }
+    }
+  ]
+}

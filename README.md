@@ -1,5 +1,6 @@
 <p align="center"><img src="site/assets/mark.svg" width="70" alt="Harness Library"></p>
 <h1 align="center">Harness Library</h1>
+<p align="center"><a href="README.md">English</a> · <a href="docs/i18n/es/README.md">Español</a> · <a href="docs/i18n/zh-CN/README.md">简体中文</a> · <a href="docs/i18n/fr/README.md">Français</a> · <a href="docs/i18n/ja/README.md">日本語</a> · <a href="docs/i18n/de/README.md">Deutsch</a> · <a href="docs/i18n/pt-BR/README.md">Português (Brasil)</a></p>
 <p align="center">Discover, install and share reusable agent harnesses.</p>
 <p align="center"><a href="https://kaelux-labs.github.io/harness-library/">Browse the library</a> · <a href="https://github.com/Kaelux-Labs/harness-library/issues/new?template=submit-harness.yml">Submit a harness</a> · <a href="CONTRIBUTING.md">Submission guide</a></p>
 
